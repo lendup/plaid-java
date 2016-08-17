@@ -12,6 +12,7 @@ import com.plaid.client.response.LongTailInstitutionsResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.plaid.client.http.ApacheHttpClientHttpDelegate;
@@ -47,17 +48,19 @@ public class PlaidPublicClientTest {
     }
     
     @Test
+    @Ignore
     public void testGetAllCategories() {
         CategoriesResponse categoriesResponse = plaidPublicClientWithoutCredentials.getAllCategories();
         assertTrue(categoriesResponse.getCategories().size() > 0);
     }
 
     @Test
+    @Ignore
     public void testGetAllInstitutions() {
         InstitutionsResponse instResponse = plaidPublicClientWithoutCredentials.getAllInstitutions();
         assertNotNull(instResponse);
         Institution[] institutions = instResponse.getInstitutions();
-        Map<String, Institution> map = new HashMap<>();
+        Map<String, Institution> map = new HashMap<String, Institution>();
         for (Institution institution : institutions) {
             map.put(institution.getName(), institution);
         }
@@ -66,11 +69,13 @@ public class PlaidPublicClientTest {
     }
 
     @Test(expected = PlaidClientsideException.class)
+    @Ignore
     public void testGetAllLongTailInstitutionsRequireCredentials() throws Exception {
         plaidPublicClientWithoutCredentials.getAllLongTailInstitutions(0, 10);
     }
 
     @Test
+    @Ignore
     public void testGetAllLongTailInstitutions() throws Exception {
         LongTailInstitutionsResponse response = plaidPublicClientWithCredentials.getAllLongTailInstitutions(0, 10);
         assertEquals(10, response.getResults().length);

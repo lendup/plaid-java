@@ -222,8 +222,9 @@ public class ApacheHttpClientHttpDelegate implements HttpDelegate {
                 throw new PlaidServersideUnknownResponseException(unknownResponse, statusCode);
             }
 
-        } catch (IllegalStateException | IOException e) {
-
+        } catch (IllegalStateException e) {
+            throw new PlaidCommunicationsException("Unable to interpret Plaid response", e);
+        } catch(IOException e) {
             throw new PlaidCommunicationsException("Unable to interpret Plaid response", e);
         } finally {
 

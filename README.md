@@ -1,6 +1,8 @@
 plaid-java
 ==========
 
+Forked from [Plaid Java](https://github.com/plaid/plaid-java) and modified to compile with Java 6
+
 Java Bindings for the Plaid API (https://www.plaid.com/docs)
 
 These bindings are under active development and currently support the main usecases of the Plaid API. There are some parts that are as yet unimplemented so pull requests are welcome!
@@ -14,7 +16,7 @@ Plaid-java is available at [Maven Central](https://search.maven.org/#search%7Cga
 <dependency>
   <groupId>com.plaid</groupId>
   <artifactId>plaid-java</artifactId>
-  <version>0.3.0</version>
+  <version>0.3.1</version>
 </dependency>
 
 ```
@@ -72,3 +74,4 @@ The project also has a test scope dependency on [Wiremock](http://wiremock.org),
 ### Contributors
 
 - [@erimag](https://github.com/erimag) (Qapital Insight AB)
+- [@calebastey](https://github.com/calebastey) (LendUp)

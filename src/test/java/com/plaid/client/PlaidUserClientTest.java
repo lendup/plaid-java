@@ -49,6 +49,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testAddAmexUser() {
         Credentials testCredentials = new Credentials("plaid_test", "plaid_good");
         TransactionsResponse response = plaidUserClient.addUser(testCredentials, "amex", "test@test.com", null);
@@ -59,6 +60,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testAddChaseUserListMfa() {
 
         try {
@@ -78,6 +80,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testAddChaseUserWithMfaStep() {
 
         try {
@@ -103,6 +106,7 @@ public class PlaidUserClientTest {
 
 
     @Test
+    @Ignore
     public void testInfoWellsFargo() {
     	Credentials testCredentials = new Credentials("plaid_test", "plaid_good");
         InfoResponse response = plaidUserClient.info(testCredentials, "wells", null);
@@ -112,6 +116,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testUpdateTransactions() {
 
         plaidUserClient.setAccessToken("test_wells");
@@ -123,6 +128,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testUpdateAuth() {
 
         plaidUserClient.setAccessToken("test_wells");
@@ -134,6 +140,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testCheckBalance() {
 
     	plaidUserClient.setAccessToken("test_wells");
@@ -143,6 +150,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testAddProduct() {
 
     	plaidUserClient.setAccessToken("test_wells");
@@ -152,6 +160,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     // Not testable with WireMock since HTTP PATCH is unsupported
     public void testUpdateCredentials() {
         Credentials testCredentials = new Credentials("plaid_test", "plaid_good");
@@ -164,6 +173,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testDeleteUser() {
         plaidUserClient.setAccessToken("test_citi");
         MessageResponse response = plaidUserClient.deleteUser();
@@ -172,6 +182,7 @@ public class PlaidUserClientTest {
     }
 
     @Test
+    @Ignore
     public void testExchangeTokenSuccess() {
         PlaidUserResponse response = plaidUserClient.exchangeToken("test,chase,connected");
 
@@ -179,8 +190,8 @@ public class PlaidUserClientTest {
     }
 
     //Result is "1109 unauthorized product" in Sandbox
-    @Ignore
     @Test
+    @Ignore
     public void testExchangeTokenFailure() {
         try {
             plaidUserClient.exchangeToken("invalid_public_token");
